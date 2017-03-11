@@ -1,6 +1,6 @@
 # Lodash Loader
 
-
+[![Build Status](https://travis-ci.org/code-chris/lodash-loader.svg?branch=master)](https://travis-ci.org/code-chris/lodash-loader)
 [![NPM](https://img.shields.io/npm/v/lodash-loader.svg)](https://www.npmjs.com/package/lodash-loader)
 
 
