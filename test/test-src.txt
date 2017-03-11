@@ -6,5 +6,9 @@ export class Main {
         _.each([], (e: any): void => {
             console.log(e);
         });
+
+        _.isArray({});
+
+        _.filter([], { name: "joe" });
     }
 }

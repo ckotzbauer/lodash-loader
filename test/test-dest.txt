@@ -1,4 +1,6 @@
 import _each = require('lodash/each');
+import _isArray = require('lodash/isArray');
+import _filter = require('lodash/filter');
 
 export class Main {
 
@@ -6,5 +8,9 @@ export class Main {
         _each([], (e: any): void => {
             console.log(e);
         });
+
+        _isArray({});
+
+        _filter([], { name: "joe" });
     }
 }

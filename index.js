@@ -30,20 +30,20 @@ module.exports = function (source) {
 };
 
 module.exports.createLodashAliases = function () {
-  var aliases = {};
+    var aliases = {};
 
-  var lodashDir = path.dirname(require.resolve("lodash"));
+    var lodashDir = path.dirname(require.resolve("lodash"));
 
-  var files = _.filter(fs.readdirSync(lodashDir), function (p) { return p.endsWith(".js") });
-  _.each(files, function (file) {
-    var n = path.basename(file, path.extname(file));
-    if (!file.startsWith("_")) {
-      // public file
-      aliases["lodash/" + n] = path.resolve(lodashDir + "/" + file);
-    }
+    var files = _.filter(fs.readdirSync(lodashDir), function (p) { return p.endsWith(".js") });
+    _.each(files, function (file) {
+        var n = path.basename(file, path.extname(file));
+        if (!file.startsWith("_")) {
+            // public file
+            aliases["lodash/" + n] = path.resolve(lodashDir + "/" + file);
+        }
 
-    aliases["./" + n] = path.resolve(lodashDir + "/" + file);
-  });
+        aliases["./" + n] = path.resolve(lodashDir + "/" + file);
+    });
 
-  return aliases;
+    return aliases;
 };
