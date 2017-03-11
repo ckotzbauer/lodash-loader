@@ -1,6 +1,6 @@
 {
   "name": "lodash-loader",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Cherry-picks Lodash functions and require them explicitly to reduce the bundle size.",
   "main": "index.js",
   "repository": {
