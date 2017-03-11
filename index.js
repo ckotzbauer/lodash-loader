@@ -34,7 +34,7 @@ module.exports.createLodashAliases = function () {
 
   var lodashDir = path.dirname(require.resolve("lodash"));
 
-  var files = _.filter(fs.readdirSync(lodashDir), function (p) { p.endsWith(".js") });
+  var files = _.filter(fs.readdirSync(lodashDir), function (p) { return p.endsWith(".js") });
   _.each(files, function (file) {
     var n = path.basename(file, path.extname(file));
     if (!file.startsWith("_")) {
