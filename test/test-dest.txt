@@ -1,0 +1,10 @@
+import _each from "lodash/each";
+
+export class Main {
+
+    public doIt(): void {
+        _each([], (e: any): void => {
+            console.log(e);
+        });
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "lodash-loader",
+  "version": "0.1.0",
+  "description": "Cherry-picks Lodash functions and require them explicitly to reduce the bundle size.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Christian Kotzbauer <christian.kotzbauer@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "~3.2.0",
+    "should": "~11.2.1"
+  }
+}
