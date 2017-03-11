@@ -22,8 +22,8 @@ module.exports = function (source) {
     var imports = "";
     output.forEach(function (expr) {
         var name = expr.substr(2);
-        imports += "import _" + name + " from \"lodash/" + name + "\";\n";
-        replaced = replaced.replace("_." + name, "_" + name);
+        imports += "import _" + name + " = require('lodash/" + name + "');\n";
+        replaced = replaced.replace(new RegExp("_." + name, "g"), "_" + name);
     });
 
     return replaced.replace(importReg, imports.substr(0, imports.length - 1));
