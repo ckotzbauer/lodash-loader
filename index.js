@@ -1,3 +1,7 @@
+var path = require("path");
+var fs = require("fs");
+var _ = require("lodash");
+
 module.exports = function (source) {
     if (this.cacheable) {
         this.cacheable();
@@ -23,4 +27,23 @@ module.exports = function (source) {
     });
 
     return replaced.replace(importReg, imports.substr(0, imports.length - 1));
+};
+
+module.exports.createLodashAliases = function () {
+  var aliases = {};
+
+  var lodashDir = path.dirname(require.resolve("lodash"));
+
+  var files = _.filter(fs.readdirSync(lodashDir), function (p) { p.endsWith(".js") });
+  _.each(files, function (file) {
+    var n = path.basename(file, path.extname(file));
+    if (!file.startsWith("_")) {
+      // public file
+      aliases["lodash/" + n] = path.resolve(lodashDir + "/" + file);
+    }
+
+    aliases["./" + n] = path.resolve(lodashDir + "/" + file);
+  });
+
+  return aliases;
 };

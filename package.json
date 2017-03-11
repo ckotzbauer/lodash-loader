@@ -1,16 +1,32 @@
 {
   "name": "lodash-loader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cherry-picks Lodash functions and require them explicitly to reduce the bundle size.",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-chris/lodash-loader.git"
   },
+  "keywords": [
+    "webpack",
+	  "lodash",
+	  "loader",
+	  "webpack-loader"
+  ],
   "author": "Christian Kotzbauer <christian.kotzbauer@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/code-chris/lodash-loader/issues"
+  },
+  "homepage": "https://github.com/code-chris/lodash-loader#readme",
+  "dependencies": {
+    "lodash": "~4.17.4"
+  },
   "devDependencies": {
     "mocha": "~3.2.0",
     "should": "~11.2.1"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
