@@ -1,9 +1,8 @@
 # Lodash Loader
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/code-chris/lodash-loader.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://travis-ci.org/code-chris/lodash-loader.svg?branch=master)](https://travis-ci.org/code-chris/lodash-loader)
 [![NPM](https://img.shields.io/npm/v/lodash-loader.svg)](https://www.npmjs.com/package/lodash-loader)
+[![Greenkeeper badge](https://badges.greenkeeper.io/code-chris/lodash-loader.svg)](https://greenkeeper.io/)
 
 
 This Webpack loader cherry-picks Lodash functions and require them explicitly to reduce the webpack bundle size.
