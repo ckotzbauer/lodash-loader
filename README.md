@@ -117,11 +117,11 @@ Function chaining is NOT supported at the moment. The same applies to `lodash/fp
 
 This are analysis of a webpack build from a medium-sized web-project. There were 11 different functions in use.
 
-| Analyse                                                                                                                                 | Library                   |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| <img src="https://github.com/code-chris/lodash-loader/blob/master/docs/img/underscore.jpg" alt="underscore" style="width: 200px;"/>     | Underscore 1.8.3          |
-| ![lodash-unoptimized](https://github.com/code-chris/lodash-loader/blob/master/docs/img/lodash-unoptimized.jpg)                          | Lodash 4.17.4 (full)      |
-| ![lodash-optimized](https://github.com/code-chris/lodash-loader/blob/master/docs/img/lodash-optimized.jpg)                              | Lodash 4.17.4 (optimized) |
+| Analyse                                                                                                        | Library                            |
+| -------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| ![underscore](https://github.com/code-chris/lodash-loader/blob/master/docs/img/underscore.jpg)                 | Underscore 1.8.3 (51,7k)           |
+| ![lodash-unoptimized](https://github.com/code-chris/lodash-loader/blob/master/docs/img/lodash-unoptimized.jpg) | Lodash 4.17.4 (full) (526,9k)      |
+| ![lodash-optimized](https://github.com/code-chris/lodash-loader/blob/master/docs/img/lodash-optimized.jpg)     | Lodash 4.17.4 (optimized) (140,8k) |
 
 
 [License](https://github.com/code-chris/lodash-loader/blob/master/LICENSE)
