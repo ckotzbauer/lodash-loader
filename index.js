@@ -2,6 +2,16 @@ var path = require("path");
 var fs = require("fs");
 var _ = require("lodash");
 
+function getSpecificImport(resourcePath, lodashModule) {
+    if (resourcePath.endsWith(".js")) {
+        // JavaScript
+        return "import * as _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
+    } else {
+        // TypeScript
+        return "import _" + lodashModule + " = require('lodash/" + lodashModule + "');\n";
+    }
+}
+
 module.exports = function (source) {
     if (this.cacheable) {
         this.cacheable();
@@ -18,11 +28,12 @@ module.exports = function (source) {
         }
     }
 
+    var resource = this.resourcePath;
     var replaced = source;
     var imports = "";
-    output.forEach(function (expr) {
+    _.each(output, function (expr) {
         var name = expr.substr(2);
-        imports += "import _" + name + " = require('lodash/" + name + "');\n";
+        imports += getSpecificImport(resource, name);
         replaced = replaced.replace(new RegExp("_." + name, "g"), "_" + name);
     });
 
