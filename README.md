@@ -17,9 +17,9 @@ npm install lodash-loader
 
 ## Usage
 
-Add this to your webpack.config.js to apply the logic to your .ts files for example.
+### JavaScript source files
 
-### Webpack 1
+Add this to your webpack.config.js to apply the logic to your `.js` files.
 
 ```js
 var createLodashAliases = require('lodash-loader').createLodashAliases;
@@ -27,8 +27,8 @@ var createLodashAliases = require('lodash-loader').createLodashAliases;
 module.exports = {
   ...
   module: {
-    loaders: [
-	    { test: /\.ts$/, loader: "ts-loader!lodash-loader" }
+    rules: [
+	    { test: /\.js$/, loader: "babel-loader!lodash-loader" }
 	  ]
   },
   resolve: {
@@ -38,7 +38,9 @@ module.exports = {
 };
 ```
 
-### Webpack 2
+### TypeScript source files
+
+Add this to your webpack.config.js to apply the logic to your `.ts` files.
 
 ```js
 var createLodashAliases = require('lodash-loader').createLodashAliases;
@@ -57,19 +59,60 @@ module.exports = {
 };
 ```
 
+*Note:* This loader has to run before babel-loader or ts-loader.
 
-## Requirements
+## Important notes
 
-Currently this loader only supports ES2015- and TypeScript-Imports. In each file with a Lodash-Reference you have to import it similar to this
+This loader changes your code to explicitly reference single lodash functions instead of import the whole lodash library.
+
+Example:
+```js
+import * as _ from "lodash";
+
+export class Main {
+
+    public myMethod() {
+        _.each([], (e) => {
+            console.log(e);
+        });
+
+        _.isArray({});
+
+        _.filter([], { name: "joe" });
+    }
+}
+```
+
+This is modified to:
+```js
+import * as _each from "lodash/each";
+import * as _isArray from "lodash/isArray";
+import * as _filter from "lodash/filter";
+
+export class Main {
+
+    public myMethod() {
+        _each([], (e) => {
+            console.log(e);
+        });
+
+        _isArray({});
+
+        _filter([], { name: "joe" });
+    }
+}
+```
+
+This works only if you import the lodash library in your code. Do NOT use lodash from browsers `window` variable. The import
+has to be a valid ES2015 or TypeScript-Import:
 ```js
 import _ from "lodash";
-```
-or this:
-```js
 import * as _ from "lodash";
 ```
 
-You should not use Lodash without an import and reference the `_` from browsers `window` variable.
+Function chaining is NOT supported at the moment. The same applies to `lodash/fp` functions.
+
+
 
 
 [License](https://github.com/code-chris/lodash-loader/blob/master/LICENSE)
