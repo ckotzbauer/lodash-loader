@@ -12,7 +12,7 @@ function getSpecificImport(resourcePath, lodashModule) {
     }
 }
 
-module.exports = function (source) {
+module.exports = function (source, map) {
     if (this.cacheable) {
         this.cacheable();
     }
@@ -37,7 +37,7 @@ module.exports = function (source) {
         replaced = replaced.replace(new RegExp("_." + name, "g"), "_" + name);
     });
 
-    return replaced.replace(importReg, imports.substr(0, imports.length - 1));
+    this.callback(null, replaced.replace(importReg, imports.substr(0, imports.length - 1)), map);
 };
 
 module.exports.createLodashAliases = function () {

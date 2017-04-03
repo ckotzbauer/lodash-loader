@@ -10,7 +10,11 @@ describe("Correct cherry-picking of lodash functions", function () {
         src = src.replace("\r", "\n");
         dest = dest.replace("\r", "\n");
 
-        should(loader.call({ resourcePath: "test.ts" }, src)).be.eql(dest);
+        var callback = function (err, result) {
+            should(result).be.eql(dest);
+        };
+
+        loader.call({ resourcePath: "test.ts", callback: callback }, src);
     });
 
     it("JavaScript files", function () {
@@ -20,6 +24,10 @@ describe("Correct cherry-picking of lodash functions", function () {
         src = src.replace("\r", "\n");
         dest = dest.replace("\r", "\n");
 
-        should(loader.call({ resourcePath: "test.js" }, src)).be.eql(dest);
+        var callback = function (err, result) {
+            should(result).be.eql(dest);
+        };
+
+        loader.call({ resourcePath: "test.js", callback: callback }, src);
     });
 });
