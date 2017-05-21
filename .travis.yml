@@ -2,10 +2,20 @@ language:
   - "node_js"
 
 node_js:
-  - "7.5"
+  - "node"
+
+before_install:
+  - npm i -g npm5
+  - npm5 i -g greenkeeper-lockfile
+
+install: npm5 install
+
+before_script: greenkeeper-lockfile-update
 
 script:
-  - npm test
+  - npm5 test
+
+after_script: greenkeeper-lockfile-upload
 
 notifications:
   slack:
