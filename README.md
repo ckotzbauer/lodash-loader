@@ -119,7 +119,7 @@ You can configure a query parameter called `importMode` to decide the destinatio
 
 | Parameter    | Mandatory | Data type | Possible values                       | Default value  |
 |--------------|-----------|-----------|---------------------------------------|----------------|
-| `importMode` | False     | String    | legacy|es2015|es2015-default|commonjs | legacy         |
+| `importMode` | False     | String    | legacy,es2015,es2015-default,commonjs | legacy         |
 
 
 ## Comparison
