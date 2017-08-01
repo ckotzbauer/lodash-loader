@@ -4,21 +4,21 @@ var _ = require("lodash");
 var utils = require('loader-utils');
 
 function getSpecificImport(resourcePath, lodashModule, importMode) {
-    var es6Import = "import * as _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
-    var es6DefaultImport = "import _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
+    var es2015Import = "import * as _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
+    var es2015DefaultImport = "import _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
     var commonJsImport = "import _" + lodashModule + " = require('lodash/" + lodashModule + "');\n";
 
-    if (importMode === "es6") {
-        return es6Import;
-    } else if (importMode === "es6-default") {
-        return es6DefaultImport;
+    if (importMode === "es2015") {
+        return es2015Import;
+    } else if (importMode === "es2015-default") {
+        return es2015DefaultImport;
     } else if (importMode === "commonjs") {
         return commonJsImport;
     } else {
         // Legacy and fallback
         if (resourcePath.endsWith(".js")) {
             // JavaScript
-            return es6Import;
+            return es2015Import;
         } else {
             // TypeScript
             return commonJsImport;
@@ -36,7 +36,7 @@ module.exports = function (source, map) {
         importMode: "legacy"
     }, query);
 
-    var supportedModes = ["legacy", "es6", "es6-default", "commonjs"];
+    var supportedModes = ["legacy", "es2015", "es2015-default", "commonjs"];
 
     if (!_.includes(supportedModes, query.importMode)) {
         throw new Error("importMode not supported!");
