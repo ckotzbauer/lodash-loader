@@ -9,9 +9,9 @@
   },
   "keywords": [
     "webpack",
-	  "lodash",
-	  "loader",
-	  "webpack-loader"
+    "lodash",
+    "loader",
+    "webpack-loader"
   ],
   "author": "Christian Kotzbauer <christian.kotzbauer@gmail.com>",
   "license": "MIT",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/code-chris/lodash-loader#readme",
   "dependencies": {
+    "loader-utils": "~1.1.0",
     "lodash": "~4.17.4"
   },
   "devDependencies": {

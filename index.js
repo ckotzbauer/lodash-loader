@@ -1,20 +1,45 @@
 var path = require("path");
 var fs = require("fs");
 var _ = require("lodash");
+var utils = require('loader-utils');
 
-function getSpecificImport(resourcePath, lodashModule) {
-    if (resourcePath.endsWith(".js")) {
-        // JavaScript
-        return "import * as _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
+function getSpecificImport(resourcePath, lodashModule, importMode) {
+    var es6Import = "import * as _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
+    var es6DefaultImport = "import _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
+    var commonJsImport = "import _" + lodashModule + " = require('lodash/" + lodashModule + "');\n";
+
+    if (importMode === "es6") {
+        return es6Import;
+    } else if (importMode === "es6-default") {
+        return es6DefaultImport;
+    } else if (importMode === "commonjs") {
+        return commonJsImport;
     } else {
-        // TypeScript
-        return "import _" + lodashModule + " = require('lodash/" + lodashModule + "');\n";
+        // Legacy and fallback
+        if (resourcePath.endsWith(".js")) {
+            // JavaScript
+            return es6Import;
+        } else {
+            // TypeScript
+            return commonJsImport;
+        }
     }
 }
 
 module.exports = function (source, map) {
     if (this.cacheable) {
         this.cacheable();
+    }
+
+    var query = utils.getOptions(this);
+    query = _.extend({
+        importMode: "legacy"
+    }, query);
+
+    var supportedModes = ["legacy", "es6", "es6-default", "commonjs"];
+
+    if (!_.includes(supportedModes, query.importMode)) {
+        throw new Error("importMode not supported!");
     }
 
     var importReg = /import.*from.*lodash.*/g;
@@ -33,7 +58,7 @@ module.exports = function (source, map) {
     var imports = "";
     _.each(output, function (expr) {
         var name = expr.substr(2);
-        imports += getSpecificImport(resource, name);
+        imports += getSpecificImport(resource, name, query.importMode);
         replaced = replaced.replace(new RegExp("_." + name, "g"), "_" + name);
     });
 
