@@ -27,12 +27,12 @@ var createLodashAliases = require('lodash-loader').createLodashAliases;
 module.exports = {
   ...
   module: {
-    rules: [
-	    { test: /\.js$/, loader: "babel-loader!lodash-loader" }
-	  ]
+      rules: [
+          { test: /\.js$/, loader: "babel-loader!lodash-loader" }
+      ]
   },
   resolve: {
-    alias: createLodashAliases()
+      alias: createLodashAliases()
   }
   ...
 };
@@ -48,12 +48,12 @@ var createLodashAliases = require('lodash-loader').createLodashAliases;
 module.exports = {
   ...
   module: {
-    rules: [
-	    { test: /\.ts$/, loader: "ts-loader!lodash-loader" }
-	  ]
+      rules: [
+          { test: /\.ts$/, loader: "ts-loader!lodash-loader" }
+      ]
   },
   resolve: {
-    alias: createLodashAliases()
+      alias: createLodashAliases()
   }
   ...
 };
@@ -111,6 +111,15 @@ import * as _ from "lodash";
 ```
 
 Function chaining is NOT supported at the moment. The same applies to `lodash/fp` functions.
+
+
+## Configuration
+
+You can configure a query parameter called `importMode` to decide the destination import format:
+
+| Parameter    | Mandatory | Data type | Possible values                       | Default value  |
+|--------------|-----------|-----------|---------------------------------------|----------------|
+| `importMode` | False     | String    | legacy|es2015|es2015-default|commonjs | legacy         |
 
 
 ## Comparison
