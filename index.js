@@ -42,27 +42,30 @@ module.exports = function (source, map) {
         throw new Error("importMode not supported!");
     }
 
-    var importReg = /import.*from.*lodash.*/g;
-    var usageReg = /_\.[a-zA-Z]*/g;
+    var importReg = /^\s*import\s+(\*\s+as\s+)?_\s+from\s+['"]lodash['"].*$/m;
+    var usageReg = /([\W])_[\s]*\.[\s]*([a-zA-Z]+)/g;
 
-    var matches = [];
-    var output = [];
+    var matches;
+    var names = [];
+    var imports = "";
     while (matches = usageReg.exec(source)) {
-        if (output.indexOf(matches[0]) === -1) {
-            output.push(matches[0]);
+        var name = matches[2];
+        if (_.includes(names, name)) {
+            continue;
         }
+        names.push(name);
+        imports += getSpecificImport(this.resourcePath, name, query.importMode);
     }
 
-    var resource = this.resourcePath;
     var replaced = source;
-    var imports = "";
-    _.each(output, function (expr) {
-        var name = expr.substr(2);
-        imports += getSpecificImport(resource, name, query.importMode);
-        replaced = replaced.replace(new RegExp("_." + name, "g"), "_" + name);
-    });
 
-    this.callback(null, replaced.replace(importReg, imports.substr(0, imports.length - 1)), map);
+    if (imports.length && source.match(importReg)) {
+        replaced = replaced
+            .replace(importReg, imports.substr(0, imports.length - 1))
+            .replace(usageReg, "$1_$2");
+    }
+
+    this.callback(null, replaced, map);
 };
 
 module.exports.createLodashAliases = function () {
@@ -76,9 +79,8 @@ module.exports.createLodashAliases = function () {
         if (!file.startsWith("_")) {
             // public file
             aliases["lodash/" + n] = path.resolve(lodashDir + "/" + file);
+            aliases["lodash." + n] = path.resolve(lodashDir + "/" + file);
         }
-
-        aliases["./" + n] = path.resolve(lodashDir + "/" + file);
     });
 
     return aliases;

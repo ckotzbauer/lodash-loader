@@ -28,6 +28,6 @@
     "should": "~11.2.1"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test/test.js"
   }
 }
