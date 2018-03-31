@@ -45,6 +45,8 @@ function multipleImports(source, matches, rule, resourcePath, importMode) {
 
 function standardImport(source, matches, rule, resourcePath, importMode) {
 
+  var copySource = source;
+
   var usageReg = /([\W])_[\s]*\.[\s]*([a-zA-Z]+)/g;
 
   var slugs = [];
@@ -72,6 +74,11 @@ function standardImport(source, matches, rule, resourcePath, importMode) {
       source = source
           .replace(rule.rule, imports.substr(0, imports.length - 1))
           .replace(usageReg, "$1_$2");
+  }
+
+  // Test if lodash pass by parameter.
+  if(new RegExp(`${matches[2]}(?![\.\\ \\w])`, 'm').exec(source)) {
+    throw new Error('fail');
   }
 
   return source;
@@ -126,14 +133,20 @@ module.exports = function (source, map) {
     // each maps
     rules.map(rule => {
 
-      while (matches = rule.rule.exec(tempSource)) {
-        map.push({
-            rule: rule.rule,
-            processor: rule.processor,
-            data: matches
-        });
+      try {
+        while (matches = rule.rule.exec(tempSource)) {
+          map.push({
+              rule: rule.rule,
+              processor: rule.processor,
+              data: matches
+          });
 
-        tempSource = rule.processor(tempSource, matches, rule, this.resourcePath, importMode);
+          tempSource = rule.processor(tempSource, matches, rule, this.resourcePath, importMode);
+        }
+      } catch(e) {
+        if (e.message !== 'fail') {
+          throw e;
+        }
       }
     });
 
