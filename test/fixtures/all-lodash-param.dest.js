@@ -7,6 +7,8 @@ export class Main {
             console.log(e);
         });
 
+        passingLodasgByParameter(_);
+
         _.isArray({});
 
         _.filter([], { name: "joe" });

@@ -1,5 +1,5 @@
-import _map = require('lodash/map');
-import _filter = require('lodash/filter');
+import _map = require("lodash/map");
+import _filter = require("lodash/filter");
 
 export class Main {
 
