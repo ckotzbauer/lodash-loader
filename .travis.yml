@@ -2,8 +2,8 @@ language:
   - "node_js"
 
 node_js:
-  - "4.8"
-  - "6.11"
+  - "6"
+  - "8"
   - "node"
 
 before_install:

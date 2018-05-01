@@ -1,12 +1,12 @@
-var path = require("path");
-var fs = require("fs");
-var _ = require("lodash");
-var utils = require('loader-utils');
+const path = require("path");
+const fs = require("fs");
+const _ = require("lodash");
+const utils = require('loader-utils');
 
-function getSpecificImport(resourcePath, lodashModule, importMode) {
-    var es2015Import = "import * as _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
-    var es2015DefaultImport = "import _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
-    var commonJsImport = "import _" + lodashModule + " = require('lodash/" + lodashModule + "');\n";
+const getSpecificImport = (resourcePath, lodashModule, importMode) => {
+    const es2015Import = "import * as _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
+    const es2015DefaultImport = "import _" + lodashModule + " from \"lodash/" + lodashModule + "\";\n";
+    const commonJsImport = "import _" + lodashModule + " = require('lodash/" + lodashModule + "');\n";
 
     if (importMode === "es2015") {
         return es2015Import;
@@ -31,25 +31,25 @@ module.exports = function (source, map) {
         this.cacheable();
     }
 
-    var query = utils.getOptions(this);
+    let query = utils.getOptions(this);
     query = _.extend({
         importMode: "legacy"
     }, query);
 
-    var supportedModes = ["legacy", "es2015", "es2015-default", "commonjs"];
+    const supportedModes = ["legacy", "es2015", "es2015-default", "commonjs"];
 
     if (!_.includes(supportedModes, query.importMode)) {
         throw new Error("importMode not supported!");
     }
 
-    var importReg = /^\s*import\s+(\*\s+as\s+)?_\s+from\s+['"]lodash['"].*$/m;
-    var usageReg = /([\W])_[\s]*\.[\s]*([a-zA-Z]+)/g;
+    const importReg = /^\s*import\s+(\*\s+as\s+)?_\s+from\s+['"]lodash['"].*$/m;
+    const usageReg = /([\W])_[\s]*\.[\s]*([a-zA-Z]+)/g;
 
-    var matches;
-    var names = [];
-    var imports = "";
+    let matches;
+    const names = [];
+    let imports = "";
     while (matches = usageReg.exec(source)) {
-        var name = matches[2];
+        const name = matches[2];
         if (_.includes(names, name)) {
             continue;
         }
@@ -57,7 +57,7 @@ module.exports = function (source, map) {
         imports += getSpecificImport(this.resourcePath, name, query.importMode);
     }
 
-    var replaced = source;
+    let replaced = source;
 
     if (imports.length && source.match(importReg)) {
         replaced = replaced
@@ -68,14 +68,14 @@ module.exports = function (source, map) {
     this.callback(null, replaced, map);
 };
 
-module.exports.createLodashAliases = function () {
-    var aliases = {};
+module.exports.createLodashAliases = () => {
+    const aliases = {};
 
-    var lodashDir = path.dirname(require.resolve("lodash"));
+    const lodashDir = path.dirname(require.resolve("lodash"));
 
-    var files = _.filter(fs.readdirSync(lodashDir), function (p) { return p.endsWith(".js") });
-    _.each(files, function (file) {
-        var n = path.basename(file, path.extname(file));
+    const files = _.filter(fs.readdirSync(lodashDir), (p) => p.endsWith(".js"));
+    _.each(files, (file) => {
+        const n = path.basename(file, path.extname(file));
         if (!file.startsWith("_")) {
             // public file
             aliases["lodash/" + n] = path.resolve(lodashDir + "/" + file);
