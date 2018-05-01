@@ -19,6 +19,9 @@
     "url": "https://github.com/code-chris/lodash-loader/issues"
   },
   "homepage": "https://github.com/code-chris/lodash-loader#readme",
+  "engines": {
+    "node": ">=6.14.2"
+  },
   "dependencies": {
     "loader-utils": "~1.1.0",
     "lodash": "~4.17.4"
