@@ -1,9 +1,8 @@
 # Lodash Loader
 
-[![Build Status](https://travis-ci.org/code-chris/lodash-loader.svg?branch=master)](https://travis-ci.org/code-chris/lodash-loader)
+[![Build Status](https://travis-ci.org/ckotzbauer/lodash-loader.svg?branch=master)](https://travis-ci.org/ckotzbauer/lodash-loader)
 [![node](https://img.shields.io/node/v/lodash-loader.svg)](https://nodejs.org)
 [![NPM](https://img.shields.io/npm/v/lodash-loader.svg)](https://www.npmjs.com/package/lodash-loader)
-[![Greenkeeper badge](https://badges.greenkeeper.io/code-chris/lodash-loader.svg)](https://greenkeeper.io/)
 
 
 This Webpack loader cherry-picks Lodash functions and require them explicitly to reduce the webpack bundle size.
@@ -129,10 +128,10 @@ This are analysis of a webpack build from a medium-sized web-project. There were
 
 | Analyse                                                                                                        | Library                            |
 | -------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| ![underscore](https://github.com/code-chris/lodash-loader/blob/master/docs/img/underscore.jpg)                 | Underscore 1.8.3 (51,7k)           |
-| ![lodash-unoptimized](https://github.com/code-chris/lodash-loader/blob/master/docs/img/lodash-unoptimized.jpg) | Lodash 4.17.4 (full) (526,9k)      |
-| ![lodash-optimized](https://github.com/code-chris/lodash-loader/blob/master/docs/img/lodash-optimized.jpg)     | Lodash 4.17.4 (optimized) (140,8k) |
+| ![underscore](https://github.com/ckotzbauer/lodash-loader/blob/master/docs/img/underscore.jpg)                 | Underscore 1.8.3 (51,7k)           |
+| ![lodash-unoptimized](https://github.com/ckotzbauer/lodash-loader/blob/master/docs/img/lodash-unoptimized.jpg) | Lodash 4.17.4 (full) (526,9k)      |
+| ![lodash-optimized](https://github.com/ckotzbauer/lodash-loader/blob/master/docs/img/lodash-optimized.jpg)     | Lodash 4.17.4 (optimized) (140,8k) |
 
 
-[License](https://github.com/code-chris/lodash-loader/blob/master/LICENSE)
+[License](https://github.com/ckotzbauer/lodash-loader/blob/master/LICENSE)
 ------

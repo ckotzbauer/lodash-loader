@@ -2,18 +2,9 @@ language:
   - "node_js"
 
 node_js:
-  - "6"
-  - "8"
+  - "10"
+  - "12"
   - "node"
-
-before_install:
-  - npm i -g greenkeeper-lockfile
-
-before_script:
-  - greenkeeper-lockfile-update
 
 script:
   - npm test
-
-after_script:
-  - greenkeeper-lockfile-upload

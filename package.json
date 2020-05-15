@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/code-chris/lodash-loader.git"
+    "url": "git+https://github.com/ckotzbauer/lodash-loader.git"
   },
   "keywords": [
     "webpack",
@@ -16,9 +16,9 @@
   "author": "Christian Kotzbauer <christian.kotzbauer@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/code-chris/lodash-loader/issues"
+    "url": "https://github.com/ckotzbauer/lodash-loader/issues"
   },
-  "homepage": "https://github.com/code-chris/lodash-loader#readme",
+  "homepage": "https://github.com/ckotzbauer/lodash-loader#readme",
   "engines": {
     "node": ">=6.14.2"
   },
