@@ -27,8 +27,8 @@
     "lodash": "~4.17.4"
   },
   "devDependencies": {
-    "mocha": "~5.2.0",
-    "should": "~13.2.0"
+    "mocha": "5.2.0",
+    "should": "13.2.1"
   },
   "scripts": {
     "test": "mocha test/test.js"
