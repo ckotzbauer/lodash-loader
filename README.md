@@ -1,6 +1,6 @@
 # Lodash Loader
 
-[![Build Status](https://travis-ci.org/ckotzbauer/lodash-loader.svg?branch=master)](https://travis-ci.org/ckotzbauer/lodash-loader)
+![test](https://github.com/ckotzbauer/lodash-loader/workflows/test/badge.svg)
 [![node](https://img.shields.io/node/v/lodash-loader.svg)](https://nodejs.org)
 [![NPM](https://img.shields.io/npm/v/lodash-loader.svg)](https://www.npmjs.com/package/lodash-loader)
 
