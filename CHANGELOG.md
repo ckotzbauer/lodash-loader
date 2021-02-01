@@ -1,3 +1,6 @@
+## Version 2.1.4 (2021-02-01)
+
+
 ## Version 2.1.2 (2020-12-09)
 
 * [[`aed391c2`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/aed391c2)] - **chore**: fix release workflow
