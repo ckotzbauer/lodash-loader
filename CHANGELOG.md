@@ -1,3 +1,19 @@
+## Version 2.1.5 (2021-04-20)
+
+### Dependency updates
+
+* [[`b9d27554`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/b9d27554)] - **deps**: bump actions&#x2F;setup-node from v2.1.4 to v2.1.5 (#55)
+* [[`89cf6850`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/89cf6850)] - **deps**: bump pascalgn&#x2F;automerge-action
+
+### Common changes
+
+* [[`4b63475b`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/4b63475b)] - **chore**: update dependency mocha to v8.3.2 (#57)
+* [[`be50daac`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/be50daac)] - **chore**: update dependency mocha to v8.3.1 (#56)
+* [[`e150631a`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/e150631a)] - **chore**: Merge pull request #54 from ckotzbauer&#x2F;dependabot&#x2F;github_actions&#x2F;pascalgn&#x2F;automerge-action-741c311a47881be9625932b0a0de1b0937aab1ae
+* [[`306cbfbe`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/306cbfbe)] - **chore**: update dependency mocha to v8.3.0 (#53)
+* [[`4608175d`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/4608175d)] - **security**: update lodash
+
+
 ## Version 2.1.4 (2021-02-01)
 
 
