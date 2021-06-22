@@ -1,3 +1,30 @@
+## Version 3.0.0 (2021-06-22)
+
+### Build and testing
+
+* [[`5acde8e4`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/5acde8e4)] - **build**: define new min-requirement
+* [[`00dcf3d8`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/00dcf3d8)] - **build**: drop node 10 support
+* [[`979e92ee`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/979e92ee)] - **build**: use delete&#x3D;true for label-creation
+
+### Dependency updates
+
+* [[`c9b1f3a2`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/c9b1f3a2)] - **deps**: update dependency mocha to v9.0.1 (#67)
+* [[`8ee37007`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/8ee37007)] - **deps**: update dependency mocha to v9
+* [[`06a25155`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/06a25155)] - **deps**: bump pascalgn&#x2F;size-label-action from 0.4.2 to 0.4.3
+* [[`f5017b03`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/f5017b03)] - **deps**: update lannonbr&#x2F;issue-label-manager-action action to v3
+* [[`02bcc0ac`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/02bcc0ac)] - **deps**: bump pascalgn&#x2F;automerge-action from 0.14.1 to 0.14.2
+* [[`cb0b5c31`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/cb0b5c31)] - **deps**: bump pascalgn&#x2F;automerge-action from 0.13.1 to 0.14.1
+* [[`c95821fb`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/c95821fb)] - **deps**: update dependency mocha to v8.4.0 (#58)
+
+### Common changes
+
+* [[`d3688526`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/d3688526)] - **chore**: Merge pull request #66 from ckotzbauer&#x2F;renovate&#x2F;mocha-9.x
+* [[`0fe61d10`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/0fe61d10)] - **chore**: Merge pull request #65 from ckotzbauer&#x2F;dependabot&#x2F;github_actions&#x2F;pascalgn&#x2F;size-label-action-0.4.3
+* [[`04d7de4a`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/04d7de4a)] - **chore**: Merge pull request #64 from ckotzbauer&#x2F;renovate&#x2F;lannonbr-issue-label-manager-action-3.x
+* [[`624ef2a4`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/624ef2a4)] - **chore**: Merge pull request #63 from ckotzbauer&#x2F;dependabot&#x2F;github_actions&#x2F;pascalgn&#x2F;automerge-action-0.14.2
+* [[`8a2220f9`](https://github.com/ckotzbauer&#x2F;lodash-loader/commit/8a2220f9)] - **chore**: Merge pull request #62 from ckotzbauer&#x2F;dependabot&#x2F;github_actions&#x2F;pascalgn&#x2F;automerge-action-0.14.1
+
+
 ## Version 2.1.5 (2021-04-20)
 
 ### Dependency updates
