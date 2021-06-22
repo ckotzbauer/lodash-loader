@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/ckotzbauer/lodash-loader#readme",
   "engines": {
-    "node": ">=6.14.2"
+    "node": ">=12.0.0"
   },
   "dependencies": {
     "loader-utils": "~2.0.0",
