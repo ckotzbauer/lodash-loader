@@ -128,10 +128,10 @@ This are analysis of a webpack build from a medium-sized web-project. There were
 
 | Analyse                                                                                                        | Library                            |
 | -------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| ![underscore](https://github.com/ckotzbauer/lodash-loader/blob/master/docs/img/underscore.jpg)                 | Underscore 1.8.3 (51,7k)           |
-| ![lodash-unoptimized](https://github.com/ckotzbauer/lodash-loader/blob/master/docs/img/lodash-unoptimized.jpg) | Lodash 4.17.4 (full) (526,9k)      |
-| ![lodash-optimized](https://github.com/ckotzbauer/lodash-loader/blob/master/docs/img/lodash-optimized.jpg)     | Lodash 4.17.4 (optimized) (140,8k) |
+| ![underscore](https://github.com/ckotzbauer/lodash-loader/blob/main/docs/img/underscore.jpg)                 | Underscore 1.8.3 (51,7k)           |
+| ![lodash-unoptimized](https://github.com/ckotzbauer/lodash-loader/blob/main/docs/img/lodash-unoptimized.jpg) | Lodash 4.17.4 (full) (526,9k)      |
+| ![lodash-optimized](https://github.com/ckotzbauer/lodash-loader/blob/main/docs/img/lodash-optimized.jpg)     | Lodash 4.17.4 (optimized) (140,8k) |
 
 
-[License](https://github.com/ckotzbauer/lodash-loader/blob/master/LICENSE)
+[License](https://github.com/ckotzbauer/lodash-loader/blob/main/LICENSE)
 ------
