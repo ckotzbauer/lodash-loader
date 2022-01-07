@@ -2,7 +2,7 @@
   "name": "lodash-loader",
   "version": "3.0.0",
   "description": "Cherry-picks Lodash functions and require them explicitly to reduce the bundle size.",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ckotzbauer/lodash-loader.git"
