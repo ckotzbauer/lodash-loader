@@ -4,6 +4,7 @@
 [![node](https://img.shields.io/node/v/lodash-loader.svg)](https://nodejs.org)
 [![NPM](https://img.shields.io/npm/v/lodash-loader.svg)](https://www.npmjs.com/package/lodash-loader)
 
+## DEPRECATED: This project is not maintained anymore.
 
 This Webpack loader cherry-picks Lodash functions and require them explicitly to reduce the webpack bundle size.
 
